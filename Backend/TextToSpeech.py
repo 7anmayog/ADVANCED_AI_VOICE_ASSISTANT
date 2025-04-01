@@ -83,7 +83,7 @@ def TextToSpeech(Text, func=lambda r=None: True):
         "Sir, look at the chat screen for the complete answer."
     ]
 
-    #if the text is very long (more than 4 sentences and 250 characters), add a responses message
+    #if the text is very long (more than 10 sentences and 500 characters), add a responses message that says something like rest of the info. is on the chatscreen.
     if len(Data) > 10 and len(Text) >= 500:
         TTS(" ".join(Text.split(".")[0:2]) + ". " + random.choice(responses), func)
 
