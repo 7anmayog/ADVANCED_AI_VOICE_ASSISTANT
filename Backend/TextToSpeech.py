@@ -17,7 +17,7 @@ async def TextToAudioFile(text) -> None:
         os.remove(file_path)  #If the file exists, remove it to avoid overwriting errors.
 
     #create the communicate object to generate speech.
-    communicate = edge_tts.Communicate(text,AssistantVoice,pitch='+4Hz',rate='+09%')
+    communicate = edge_tts.Communicate(text,AssistantVoice,pitch='+4Hz',rate='+10%')
     await communicate.save(r'Data\speech.mp3') #Save the generated speech as an mp3 file.
 
 # Function to manage Text-to-Speech (TTS) functionality
@@ -83,11 +83,17 @@ def TextToSpeech(Text, func=lambda r=None: True):
         "Sir, look at the chat screen for the complete answer."
     ]
 
-    TTS(Text, func)
+    #if the text is very long (more than 4 sentences and 250 characters), add a responses message
+    if len(Data) > 10 and len(Text) >= 500:
+        TTS(" ".join(Text.split(".")[0:2]) + ". " + random.choice(responses), func)
+
+    #otherwise , just play the whole text.
+    else:
+        TTS(Text, func)
 
 #main execution loop
 if __name__ == "__main__":
     while True:
         #prompt the user for input text and pass it to TextToSpeech function.
-        TTS(input("Enter the text: "))
+        TextToSpeech(input("Enter the text: "))
         
