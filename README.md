@@ -4,10 +4,10 @@
 
 2.YOU CAN EDIT SOME INFORMATION THAT ARE NECESSARY TO DO , YOU MUST EDIT .env FILE FOR BETTER EXPERIENCE AND FOR API INTEGRATION .
    OPEN .env FILE AND CHANGE THE FOLLOWING THINGS ACCORDING TO YOU :
-                    CohereAPIKey = ****************************************/n
-                    Username = ********/n
-                    Assistantname = *******/n
-                    GroqAPIKey = ******************************************/n
+                    CohereAPIKey = ****************************************
+                    Username = ********
+                    Assistantname = *******
+                    GroqAPIKey = ******************************************
                     InputLanguage = en
                     AssistantVoice = en-CA-LiamNeural
                     HuggingFaceAPIKey = ************************************
